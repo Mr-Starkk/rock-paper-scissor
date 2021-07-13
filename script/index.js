@@ -9,44 +9,60 @@ function computerPlay(){
     else 
     return('Scissor');
 }
+
+
 function InputFromUser(){
-    let userInput = prompt('Rock, Paper Or Scissor?');
-    return userInput.toLowerCase();
+    let playerSelection = prompt('Rock, Paper Or Scissor?');
+    return playerSelection.toLowerCase();
 }
-function gameplay(){
-    let x = computerPlay();
-    userInput = InputFromUser();
-    console.log(userInput);
-    console.log(x);
+
+
+function playRound(playerSelection, computerSelection){
+    computerSelection = computerPlay();
+    playerSelection = InputFromUser();
     //this is where the action happens
-    while (userInput === 'rock'){
-        if(x === 'Rock'){
-            return console.log("draw");
+    while (playerSelection === 'rock'){
+        if(computerSelection === 'Rock'){
+            return ("draw");
         }
-        else if (x === 'Paper'){
-            return console.log("You lose.");
-        } else return console.log("You win.");
+        else if (computerSelection === 'Paper'){
+            return ("You lose.");
+        } else return ("You win.");
     }
-    while (userInput == 'paper'){
-        if(x === 'Rock'){
-            return console.log("You win.");
+    while (playerSelection == 'paper'){
+        if(computerSelection === 'Rock'){
+            return ("You win.");
         }
-        else if (x === 'Paper'){
-            return console.log("draw");
-        } else return console.log("You lose.");
+        else if (computerSelection === 'Paper'){
+            return ("draw");
+        } else return ("You lose.");
     }
-    while (userInput == 'scissor'){
-        if(x === 'Rock'){
-            return console.log("You lose.");
+    while (playerSelection == 'scissor'){
+        if(computerSelection === 'Rock'){
+            return ("You lose.");
         }
-        else if (x === 'Paper'){
-            return console.log("You win.");
-        } else return console.log("draw");
+        else if (computerSelection === 'Paper'){
+            return ("You win.");
+        } else return ("draw");
     }
 }
+
+// const playerSelection = "rock";
+// const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
+
+
 function game(){
-    let score = 0;
-    for(i=0; i<5; i++){
-        gameplay();
-    }
-}
+    let userScore = 0;
+    let computerScore = 0;
+    for(i=0 ;i<5; i++){
+        const instance = playRound();
+        console.log(instance)
+        if(instance == "You win."){userScore++;}
+        else if(instance == "You lose."){computerScore++;}
+    };
+    if(userScore > computerScore){
+        console.log('%c Winner Winner chicken dinner', 'font-size: 20px; color: green;')
+    } else if(computerScore >  userScore){
+    console.log('%c No chicken dinner', 'font-size: 20px; color: red;')};
+};

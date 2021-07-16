@@ -52,17 +52,17 @@ function playRound(playerSelection, computerSelection){
 // console.log(playRound(playerSelection, computerSelection));
 
 
-function game(){
-    let userScore = 0;
-    let computerScore = 0;
-    for(i=0 ;i<5; i++){
-        const instance = playRound();
-        console.log(instance)
-        if(instance == "You win."){userScore++;}
-        else if(instance == "You lose."){computerScore++;}
-    };
-    if(userScore > computerScore){
-        console.log('%c Winner Winner chicken dinner', 'font-size: 20px; color: green;')
-    } else if(computerScore >  userScore){
-    console.log('%c No chicken dinner', 'font-size: 20px; color: red;')};
-};
+// function game(){
+//     let userScore = 0;
+//     let computerScore = 0;
+//     for(i=0 ;i<5; i++){
+//         const instance = playRound();
+//         console.log(instance)
+//         if(instance == "You win."){userScore++;}
+//         else if(instance == "You lose."){computerScore++;}
+//     };
+//     if(userScore > computerScore){
+//         console.log('%c Winner Winner chicken dinner', 'font-size: 20px; color: green;')
+//     } else if(computerScore >  userScore){
+//     console.log('%c No chicken dinner', 'font-size: 20px; color: red;')};
+// };

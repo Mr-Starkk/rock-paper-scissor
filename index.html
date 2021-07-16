@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script/index.js" defer></script>
         <title>Rock-Paper-Scissor</title>
+            <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+            </style>
     </head>
     <body>
-        <script src="script/index.js"></script>
+        <div id="main-container">
+            <div id="result-area">
+                <p>Score : 
+                    <span id="playerScore"> 4 </span>
+                    <span id="computerScore"> 3 </span>
+                </p>
+                <p>Computer Selection : </p>
+            </div>
+
+            <div id="player-area">
+                <div id="rock">
+                    <img src="rock.jpg" alt="rock">
+                </div>
+                <div id="paper">
+                    <img src="paper.jpg" alt="paper">
+                </div>
+                <div id="scissor">
+                    <img src="scissor.jpg" alt="scissor">
+                </div>
+            </div>
+
+            <div id="opponent-area"></div>
+        </div>
     </body>
 </html>

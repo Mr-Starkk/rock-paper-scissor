@@ -11,15 +11,10 @@ function computerPlay(){
 }
 
 
-function InputFromUser(){
-    let playerSelection = prompt('Rock, Paper Or Scissor?');
-    return playerSelection.toLowerCase();
-}
-
 
 function playRound(playerSelection, computerSelection){
     computerSelection = computerPlay();
-    playerSelection = InputFromUser();
+    // playerSelection = InputFromUser();
     //this is where the action happens
     while (playerSelection === 'rock'){
         if(computerSelection === 'Rock'){
@@ -47,22 +42,38 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-// const playerSelection = "rock";
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
+const rockBtn = document.getElementById('rockImg');
+const paperBtn = document.getElementById('paperImg');
+const scissorBtn = document.getElementById('scissorImg');
+const img = document.querySelectorAll('img');
 
-
-// function game(){
-//     let userScore = 0;
-//     let computerScore = 0;
-//     for(i=0 ;i<5; i++){
-//         const instance = playRound();
-//         console.log(instance)
-//         if(instance == "You win."){userScore++;}
-//         else if(instance == "You lose."){computerScore++;}
-//     };
-//     if(userScore > computerScore){
-//         console.log('%c Winner Winner chicken dinner', 'font-size: 20px; color: green;')
-//     } else if(computerScore >  userScore){
+    img.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        console.log(e.target.alt);
+        console.log(playRound(`${e.target.alt}`));
+    });
+        });
+        
+        // rockBtn.addEventListener('click', () => console.log(playRound('rock')));
+        
+        //takes input through prompt, not needed anymore
+            // function InputFromUser(){
+            //     let playerSelection = prompt('Rock, Paper Or Scissor?');
+            //     return playerSelection.toLowerCase();
+            // }
+        
+        // function game(){
+            //     let userScore = 0;
+            //     let computerScore = 0;
+            //     for(i=0 ;i<5; i++){
+                //         const instance = playRound();
+                //         console.log(instance)
+                //         if(instance == "You win."){userScore++;}
+                //         else if(instance == "You lose."){computerScore++;}
+                //     };
+                //     if(userScore > computerScore){
+                    //         console.log('%c Winner Winner chicken dinner', 'font-size: 20px; color: green;')
+                    //     } else if(computerScore >  userScore){
 //     console.log('%c No chicken dinner', 'font-size: 20px; color: red;')};
 // };
+

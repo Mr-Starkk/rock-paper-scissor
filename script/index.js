@@ -14,11 +14,14 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
     computerSelection = computerPlay();
+    const resultArea = document.getElementById('computerSelection');
+    resultArea.textContent = 'Computer Selection : ';
+    resultArea.textContent += computerSelection;
     // playerSelection = InputFromUser();
     //this is where the action happens
     while (playerSelection === 'rock'){
         if(computerSelection === 'Rock'){
-            return ("draw");
+            return ("It's A Draw!!");
         }
         else if (computerSelection === 'Paper'){
             return ("You lose.");
@@ -29,7 +32,7 @@ function playRound(playerSelection, computerSelection){
             return ("You win.");
         }
         else if (computerSelection === 'Paper'){
-            return ("draw");
+            return ("It's A Draw!!");
         } else return ("You lose.");
     }
     while (playerSelection == 'scissor'){
@@ -38,22 +41,61 @@ function playRound(playerSelection, computerSelection){
         }
         else if (computerSelection === 'Paper'){
             return ("You win.");
-        } else return ("draw");
+        } else return ("It's A Draw!!");
     }
 }
 
-const rockBtn = document.getElementById('rockImg');
-const paperBtn = document.getElementById('paperImg');
-const scissorBtn = document.getElementById('scissorImg');
-const img = document.querySelectorAll('img');
 
-    img.forEach((button) => {
+
+const img = document.querySelectorAll('img');
+const commentary = document.getElementById('commentary');
+const playerScore = document.getElementById('playerScore');
+const computerScore = document.getElementById('computerScore');
+const resultArea = document.getElementById('computerSelection');
+
+img.forEach((button) => {
     button.addEventListener('click', (e) => {
-        console.log(e.target.alt);
-        console.log(playRound(`${e.target.alt}`));
+        commentary.textContent = playRound(`${e.target.alt}`);
+        updateScore();
     });
-        });
-        
+});
+
+function updateScore(){
+    intps = parseInt(playerScore.textContent);
+    intcs = parseInt(computerScore.textContent);
+
+
+    if(commentary.textContent == "You win."){
+        playerScore.textContent = intps + 1;
+    }else if(commentary.textContent == "You lose."){
+        computerScore.textContent = intcs + 1;
+    }
+
+    declareWinner(intps,intcs);
+}
+
+function declareWinner(intps, intcs){
+    if(intps == 4){
+        alert('Winner Winner Chicken Dinner!');
+        playerScore.textContent = ' 0 ';
+        computerScore.textContent = ' 0 ';
+        commentary.textContent = '';
+        resultArea.textContent = 'Computer Selection : ';
+    }
+    else if (intcs == 4){
+        alert('No Chicken Dinner For You. Go Home.');
+        playerScore.textContent = ' 0 ';
+        computerScore.textContent = ' 0 ';
+        commentary.textContent = '';
+        resultArea.textContent = 'Computer Selection : ';
+
+    }
+}
+
+
+        // const rockBtn = document.getElementById('rockImg');
+        // const paperBtn = document.getElementById('paperImg');
+        // const scissorBtn = document.getElementById('scissorImg');
         // rockBtn.addEventListener('click', () => console.log(playRound('rock')));
         
         //takes input through prompt, not needed anymore

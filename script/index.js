@@ -52,6 +52,7 @@ const commentary = document.getElementById('commentary');
 const playerScore = document.getElementById('playerScore');
 const computerScore = document.getElementById('computerScore');
 const resultArea = document.getElementById('computerSelection');
+const mainContainer = document.getElementById('main-container');
 
 img.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -71,23 +72,25 @@ function updateScore(){
         computerScore.textContent = intcs + 1;
     }
 
-    declareWinner(intps,intcs);
+    WinnerStyleChange(intps,intcs);
 }
 
-function declareWinner(intps, intcs){
+function WinnerStyleChange(intps, intcs){
     if(intps == 4){
-        alert('Winner Winner Chicken Dinner!');
+        mainContainer.style.border = '10px solid green';
         playerScore.textContent = ' 0 ';
         computerScore.textContent = ' 0 ';
         commentary.textContent = '';
         resultArea.textContent = 'Computer Selection : ';
+        alert('Winner Winner Chicken Dinner!');
     }
     else if (intcs == 4){
-        alert('No Chicken Dinner For You. Go Home.');
+        mainContainer.style.border = '10px solid red';
         playerScore.textContent = ' 0 ';
         computerScore.textContent = ' 0 ';
         commentary.textContent = '';
         resultArea.textContent = 'Computer Selection : ';
+        alert('No Chicken Dinner For You. Go Home.');
 
     }
 }

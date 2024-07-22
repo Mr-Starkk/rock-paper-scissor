@@ -13,14 +13,14 @@ function getComputerChoice() {
 }
 
 
-
-function playRound(playerSelection, computerSelection) {
-    computerSelection = getComputerChoice();
-    const resultArea = document.getElementById('computerSelection');
+/* Fuction that takes user choice and plays a round of rock-paper-scissor and declares the result
+ */
+function playRound(humanChoice) {
+    let computerChoice = getComputerChoice();
     resultArea.textContent = 'Computer Selection : ';
-    resultArea.textContent += computerSelection;
-    while (playerSelection === 'rock') {
-        if (computerSelection === 'Rock') {
+    resultArea.textContent += computerChoice;
+    while (humanChoice === 'rock') {
+        if (computerChoice === 'Rock') {
             return ("It's A Draw!!");
         }
         else if (computerChoice === 'Paper') {

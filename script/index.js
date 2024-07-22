@@ -1,4 +1,6 @@
-function computerPlay(){
+/* Function that randomly returns 'rock','paper' or 'scissor'.
+ */
+function getComputerChoice(){
     let RandomNumber = parseInt(Math.random()*100);
     if (RandomNumber < 33){
         return('Rock');
@@ -13,12 +15,10 @@ function computerPlay(){
 
 
 function playRound(playerSelection, computerSelection){
-    computerSelection = computerPlay();
+    computerSelection = getComputerChoice();
     const resultArea = document.getElementById('computerSelection');
     resultArea.textContent = 'Computer Selection : ';
     resultArea.textContent += computerSelection;
-    // playerSelection = InputFromUser();
-    //this is where the action happens
     while (playerSelection === 'rock'){
         if(computerSelection === 'Rock'){
             return ("It's A Draw!!");

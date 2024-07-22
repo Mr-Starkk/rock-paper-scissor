@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
 body {
     display: flex;
-    justify-content: center;
-    /* background: rgb(15, 15, 15); */
     background: url(background-image.jpg);
 }
 
 #main-container {
     display: flex;
     flex-direction: column;
-    margin-top: 4%;
+    margin-top: 6%;
     margin-left: 22%;
     margin-right: 22%;
     height: 500px;
@@ -38,9 +38,6 @@ body {
     border: 5px dotted rgb(42, 108, 134);
     margin: 5px;
     padding-right: 15px;
-    /* margin: 5px;
-    align-self: flex-start;
-    justify-self: flex-end; */
     background-color: rgb(29, 29, 31);
     color: green;
 }
@@ -49,7 +46,6 @@ body {
     display: flex;
     align-items: center;
     border: 3px solid rgb(13, 75, 8);
-    justify-content: space-evenly;
     background: rgb(9, 88, 82);
     flex: 0.7;
     border-radius: 10px;
@@ -57,9 +53,8 @@ body {
 }
 
 img {
-    width: 80%;
+    width: 90%;
     margin: 10px;
-    /* min-width: 280px; */
 }
 
 img:hover {
